@@ -19,9 +19,12 @@
 				height: 100vh;
 				border: 10px solod #14a76c;
 				display: grid;
-				grid-template-rows: 200px 200px;
-				grid-template-columns: repeat(3, 1fr);
-				grid-gap: 20px;
+
+				grid-template:
+					'header header header' 100px
+					'nav main ads' 1fr
+					'footer footer footer' 100px
+					/ 20% 1fr 15%;
 			}
 			.grid-item {
 				background-color: #ccc;
@@ -30,19 +33,19 @@
 			}
 
 			.item-1 {
-				grid-column: 1 / 3;
+				grid-area: header;
 			}
 			.item-2 {
-				grid-area: 1 / 3 / 3 / 4;
-                z-index: 1;
+				grid-area: nav;
 			}
 			.item-3 {
-				grid-area: 2 / 1 / span 3 / span 2;
+				grid-area: main;
 			}
 			.item-4 {
-                grid-area: 2 / 2 / span 2 / span 2;
+				grid-area: ads;
 			}
 			.item-5 {
+				grid-area: footer;
 			}
 		</style>
 	</head>
